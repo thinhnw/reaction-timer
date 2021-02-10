@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import Block from './components/Block'
+import Block from "./components/Block"
 
 export default {
   name: "App",
