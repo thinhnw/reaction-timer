@@ -1,11 +1,28 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png" />
+  <h1>Ninja Reaction Timer</h1>
+  <button @click="start" :disabled="isPlaying">Play</button>
+  <Block v-if="isPlaying" :delay="delay" />
 </template>
 
 <script>
+import Block from './components/Block'
 
 export default {
   name: "App",
+  components: { Block },
+  data() {
+    return {
+      isPlaying: false,
+      delay: null
+    }
+  },
+  methods: {
+    start() {
+      this.isPlaying = true;
+      this.delay = 2000 + Math.random() * 3000;
+      console.log(this.delay);
+    }
+  }
 };
 </script>
 
